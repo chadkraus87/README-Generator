@@ -33,17 +33,17 @@ const questions = [
   {
     type: "input",
     name: "installation",
-    message: "Provide what installation is necessary for your project."
+    message: "Provide the necessary installation details for your project."
   },
   {
     type: "input",
     name: "usage",
-    message: "Provide details about how your project is used."
+    message: "Provide information about how your project is used."
   },
   {
     type: "list",
     name: "license",
-    message: "Choose a license to add to your repo.",
+    message: "Choose a license to add to your repository.",
     choices: ["Apache License 2.0", "MIT License", "GNU General Public License v3.0", "None"]
   },
   {
@@ -54,7 +54,7 @@ const questions = [
   {
     type: "input",
     name: "tests",
-    message: "Provide examples of any tests written for your application (if applicable)."
+    message: "Provide examples of any tests written for your application (optional)."
   },
   {
     type: 'input',
@@ -85,7 +85,7 @@ const questions = [
       if (data.github) {
         const githubUrl = `https://github.com/${data.github}`;
         const githubLink = `[GitHub profile](${githubUrl})`;
-        message += ` You can also find more information and other projects on my ${githubLink}.`;
+        message += ` You can also find more information and other projects on my ${githubLink}. Thank you for using my README Generator!`;
       }
       
       return message;
