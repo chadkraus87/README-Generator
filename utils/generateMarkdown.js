@@ -76,21 +76,17 @@ ${data.usage}
 
 This project is licensed under the ${data.license} license.
 
-## Credits
+## Contributing
 
-${data.credits}
-
-## Features
-
-${data.features}
+${data.contributing}
 
 ## Tests
 
 ${data.tests}
 
-## Contact
+## Questions
 
-${data.contact}
+${data.questions}
 `;
 }
 

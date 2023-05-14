@@ -38,13 +38,8 @@ const questions = [
   },
   {
     type: "input",
-    name: "credits",
+    name: "contributing",
     message: "Provide names of contributing cohorts as well as links to their GitHub profiles. Include links to any third-party libraries, assets, or tutorials used in your project."
-  },
-  {
-    type: "input",
-    name: "features",
-    message: "Provide additional information about the features of your project."
   },
   {
     type: "input",
@@ -52,10 +47,40 @@ const questions = [
     message: "Provide examples of any tests written for your application (if applicable)."
   },
   {
-    type: "input",
-    name: "contact",
-    message: "Provide your contact information, including your GitHub username."
+    type: 'input',
+    name: 'email',
+    message: 'What is your email address? (required)',
+    validate: function (input) {
+      return input !== '' ? true : 'Please enter your email address.';
+    }
   },
+  {
+    type: 'input',
+    name: 'github',
+    message: 'What is your GitHub username? (required)',
+    validate: function (input) {
+      return input !== '' ? true : 'Please enter your GitHub username.';
+    }
+  },
+  {
+    type: 'input',
+    name: 'questions',
+    message: (answers) => {
+      let message = 'If you have any questions or comments about this project,';
+      
+      if (answers.email) {
+        message += ` please contact me at ${answers.email}.`;
+      }
+      
+      if (answers.github) {
+        const githubUrl = `https://github.com/${answers.github}`;
+        const githubLink = `[GitHub profile](${githubUrl})`;
+        message += ` You can also find more information and other projects on my ${githubLink}.`;
+      }
+      
+      return message;
+    }
+  }  
 ];
 
 // TODO: Create a function to write README file
