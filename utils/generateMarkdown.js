@@ -62,7 +62,7 @@ ${data.description}
 - [Credits](#credits)
 - [Features](#features)
 - [Tests](#tests)
-- [Contact](#contact)
+- [Questions](#questions)
 
 ## Installation
 
@@ -86,7 +86,7 @@ ${data.tests}
 
 ## Questions
 
-${data.questions}
+If you have any questions or comments about this project, please contact me at ${data.email}. You can also find more information and other projects on my GitHub https://github.com/${data.github}.
 `;
 }
 

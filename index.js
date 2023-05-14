@@ -16,10 +16,20 @@ const questions = [
     message: "Provide a description of your project."
   },
   {
-    type: "input",
-    name: "contents",
-    message: "Provide a table of contents of your project if needed."
+    type: 'confirm',
+    name: 'hasContents',
+    message: 'Do you want to include a table of contents in your README?',
+    default: false,
   },
+  {
+    type: 'input',
+    name: 'contents',
+    message: 'Provide a table of contents for your project (optional):',
+    when: (answers) => answers.hasContents,
+    validate: function (input) {
+      return input.trim().length > 0 || 'Please enter at least one chapter for the table of contents.';
+    }
+  },  
   {
     type: "input",
     name: "installation",
@@ -65,15 +75,15 @@ const questions = [
   {
     type: 'input',
     name: 'questions',
-    message: (answers) => {
+    message: (data) => {
       let message = 'If you have any questions or comments about this project,';
       
-      if (answers.email) {
-        message += ` please contact me at ${answers.email}.`;
+      if (data.email) {
+        message += ` please contact me at ${data.email}.`;
       }
       
-      if (answers.github) {
-        const githubUrl = `https://github.com/${answers.github}`;
+      if (data.github) {
+        const githubUrl = `https://github.com/${data.github}`;
         const githubLink = `[GitHub profile](${githubUrl})`;
         message += ` You can also find more information and other projects on my ${githubLink}.`;
       }
