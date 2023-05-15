@@ -60,7 +60,6 @@ ${data.description}
 - [Usage](#usage)
 - [License](#license)
 - [Credits](#credits)
-- [Features](#features)
 - [Tests](#tests)
 - [Questions](#questions)
 

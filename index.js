@@ -76,16 +76,16 @@ const questions = [
     type: 'input',
     name: 'questions',
     message: (data) => {
-      let message = 'If you have any questions or comments about this project,';
+      let message = 'If users have questions or comments about your project,';
       
       if (data.email) {
-        message += ` please contact me at ${data.email}.`;
+        message += ` they will contact you at ${data.email}.`;
       }
       
       if (data.github) {
         const githubUrl = `https://github.com/${data.github}`;
         const githubLink = `[GitHub profile](${githubUrl})`;
-        message += ` You can also find more information and other projects on my ${githubLink}. Thank you for using my README Generator!`;
+        message += `Users can find more information and other projects on your ${githubLink}. Press Enter.`;
       }
       
       return message;
