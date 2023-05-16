@@ -113,7 +113,7 @@ function init() {
 
   inquirer.prompt(questions)
     .then((answers) => {
-      const fileName = 'README.md';
+      const fileName = './lib/README.md';
       const data = generateMarkdown(answers);
       writeToFile(fileName, data);
     })
