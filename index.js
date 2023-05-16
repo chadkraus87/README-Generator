@@ -26,10 +26,11 @@ const questions = [
     name: 'contents',
     message: 'Provide a table of contents for your project (optional):',
     when: (answers) => answers.hasContents,
+    default: 'Installation, Usage, License, Credits, Tests, Questions',
     validate: function (input) {
       return input.trim().length > 0 || 'Please enter at least one chapter for the table of contents.';
     }
-  },  
+  },    
   {
     type: "input",
     name: "installation",
@@ -85,7 +86,7 @@ const questions = [
       if (data.github) {
         const githubUrl = `https://github.com/${data.github}`;
         const githubLink = `[GitHub profile](${githubUrl})`;
-        message += `Users can find more information and other projects on your ${githubLink}. Press Enter.`;
+        message += ` Users can find more information and other projects on your ${githubLink}. Press Enter.`;
       }
       
       return message;
@@ -93,16 +94,23 @@ const questions = [
   }  
 ];
 
+// Function to display welcome message
+function displayWelcomeMessage() {
+  console.log('Welcome to a README Generator!');
+}
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
     if (err) throw err;
-    console.log('README file created successfully!');
+    console.log('README file created successfully! Thank you for using this generator.');
   });
 }
 
 // TODO: Create a function to initialize app
 function init() {
+  displayWelcomeMessage();
+
   inquirer.prompt(questions)
     .then((answers) => {
       const fileName = 'README.md';
