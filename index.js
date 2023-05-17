@@ -26,7 +26,7 @@ const questions = [
     name: 'contents',
     message: 'Provide a table of contents for your project (optional):',
     when: (answers) => answers.hasContents,
-    default: 'Installation, Usage, License, Credits, Tests, Questions',
+    default: 'Installation, Usage, License, Contributing, Tests, Questions',
     validate: function (input) {
       return input.trim().length > 0 || 'Please enter at least one chapter for the table of contents.';
     }
@@ -103,7 +103,7 @@ function displayWelcomeMessage() {
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
     if (err) throw err;
-    console.log('README file created successfully! Thank you for using this generator.');
+    console.log('README file created successfully! Thank you for using this generator. If you encounter any issues or bugs while using this tool, please report them to the project GitHub repository so that they can be addressed. Additionally, contributions to this project are always welcome. If you would like to contribute, please review the project contribution guidelines and submit a pull request. Thank you for your support!');
   });
 }
 
