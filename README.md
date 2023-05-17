@@ -11,6 +11,8 @@ This application is designed to help users create and generate high-quality READ
 
 ![Terminal Demo](./lib/terminal.png)
 
+https://github.com/chadkraus87/README-Generator/assets/127354484/1c433ade-36e8-4b87-9747-2470b07a5a85
+
 ## Table of Contents
 
 - [Installation](#installation)
