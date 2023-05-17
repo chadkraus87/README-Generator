@@ -9,8 +9,7 @@ This application is designed to help users create and generate high-quality READ
 
 [GitHub Repository](https://github.com/chadkraus87/README-Generator)
 
-![Terminal Demo](./lib/terminal.png)]
-(https://drive.google.com/file/d/1EIou1pHfQXtrZwFtBjIfQI2E9xsScndt/view)
+![Terminal Demo](./lib/terminal.png)
 
 ## Table of Contents
 
